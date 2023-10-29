@@ -50,7 +50,7 @@ class Location:
     """A class containing geo information"""
 
     def __init__(self, location=None) -> None:
-        if location == 'auto' or location is None:
+        if location in ['auto', '', None]:
             location = self.get_ip_location()
 
         geocode = self.get_loc_geocode(location)
