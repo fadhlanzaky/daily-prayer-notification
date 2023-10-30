@@ -1,13 +1,14 @@
 # daily-prayer-notification
-A pop-up Windows notification to notify daily prayer time. Built using BeautifulSoup to scrape the prayer time from muslimpro.com and Winotify as the module to show notification toast on Windows.
+A pop-up Windows notification to notify daily prayer times. Built using BeautifulSoup to scrape the prayer times from muslimpro.com and Winotify as the module to show notification toast on Windows.
 
 ## Start
+- go to daily-prayer-notification directory `cd daily-prayer-notification`
 - install dependencies `pip install -r requirements.txt`
-- config your location and preferred reminder time in `config.ini`
-- run the app `python main.py `
+- config your location and preferred reminder time in `main\config.ini`
+- run the app `python main\main.py `
 
 ## Configuration
-configurations are stored in config.ini
+Configurations are stored in config.ini
 ```ini
     [LOCATION]
     # set the location to your current location (e.g. Jakarta)
@@ -21,4 +22,4 @@ configurations are stored in config.ini
 ```
 
 ## Startup
-the script can be set to run on Windows startup. The tutorial will be provided soon
+The script can be set to run on Windows startup. The tutorial will be provided soon.
