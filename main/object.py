@@ -129,7 +129,7 @@ class PrayerTime:
         self.date = prayer_time.get('date')
         for prayer in self.prayers:
             try:
-                self.prayer_time.append(prayer_time.get(prayer))
+                self.prayer_time.append(prayer_time.get(prayer)+":00")
             except:
                 self.prayer_time.append(None)
 
@@ -145,12 +145,12 @@ class PrayerTime:
         for minute in reminder_time:
             # check reminder
             delta = now + timedelta(minutes=int(minute))
-            delta = datetime.strftime(delta, '%H:%M')
+            delta = datetime.strftime(delta, '%H:%M:%S')
             if delta in self.prayer_time:
                 prayer = self.prayers[self.prayer_time.index(delta)]
                 self.display_notification(prayer, delta, f"{prayer} in {minute} mins")
         
-        hour = datetime.strftime(now, '%H:%M')
+        hour = datetime.strftime(now, '%H:%M:%S')
         if hour in self.prayer_time:
             prayer = self.prayers[self.prayer_time.index(hour)]
             self.display_notification(prayer, hour)
